@@ -1,4 +1,5 @@
 'use strict';
+/* global localStorage */
 
 const API_BASE = '/api';
 const STORAGE_KEY = 'chat_username';

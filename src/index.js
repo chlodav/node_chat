@@ -140,6 +140,9 @@ const server = http.createServer((req, res) => {
 
       if (req.method === 'DELETE') {
         const index = rooms.findIndex((item) => item.id === roomId);
+        if (index === -1) {
+          return sendError(res, 'Room not found', 404);
+        }
         rooms.splice(index, 1);
         return sendJson(res, { success: true });
       }
